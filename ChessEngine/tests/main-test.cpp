@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "init-test.hh"
+#include "init-test.h"
 
 
 int main(int argc, char* argv[])
