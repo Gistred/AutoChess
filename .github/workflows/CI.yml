@@ -22,5 +22,6 @@ jobs:
           make
       - name: Launch tests
         run: ./ChessEngine/bin/Debug/ChessEngine/ChessEngineTest
+        
 
       
