@@ -8,9 +8,11 @@ jobs:
     runs-on: ubuntu-latest
   
     steps:
-      - uses: abel0b/setup-premake@v2.2
-        with:
-          version: "5.0.0-beta2"
+        - name: Install Premake 5
+          run: |
+            wget https://github.com/premake/premake-core/releases/download/v5.0.0-alpha15/premake-5.0.0-alpha15-linux.tar.gz
+            tar -xzf premake-5.0.0-alpha15-linux.tar.gz
+            sudo mv premake5 /usr/local/bin
       - uses: actions/checkout@v3
         with:
           submodules: true
