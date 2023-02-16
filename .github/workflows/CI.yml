@@ -1,1 +1,19 @@
 name: CI
+
+on: push
+
+jobs:
+  unit-tests:
+    name: Check all tests
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v2
+      - name: Launch premake5
+        run: |
+          premake5 gmake2
+          make
+      - name: Launch tests
+        run: premake5 tests
+      
