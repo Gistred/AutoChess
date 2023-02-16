@@ -8,3 +8,9 @@
 
 # CMakeFiles
 CMakeFiles
+
+# bin
+bin/
+bin-int/
+Makefile
+*.make

@@ -1,6 +1,7 @@
 
+targetdirectory = "bin/%{cfg.buildcfg}/ChessEngine"
+objectdirectory = "bin-int/%{cfg.buildcfg}/ChessEngine"
 
-printf("%s", os.getcwd())
 workspace "AutoChess"
    configurations { "Debug", "Release" }
 
@@ -36,6 +37,6 @@ newaction {
         description = "launch all tests",
         execute     = function ()
             os.execute("make")
-            os.execute("ChessEngine/bin/Debug/ChessEngine/ChessEngineTest")
+            os.execute('bash -c \'ChessEngine/bin/Debug/ChessEngine/ChessEngineTest\'')
         end
 }
