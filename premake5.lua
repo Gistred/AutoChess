@@ -37,6 +37,6 @@ newaction {
         description = "launch all tests",
         execute     = function ()
             os.execute("make")
-            os.execute('sh \'ChessEngine/bin/Debug/ChessEngine/ChessEngineTest\'')
+            os.execute('bash -c \'ChessEngine/bin/Debug/ChessEngine/ChessEngineTest\'')
         end
 }
