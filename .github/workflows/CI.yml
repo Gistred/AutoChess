@@ -9,7 +9,7 @@ jobs:
   
     steps:
       - name: Clone repo
-        uses: actions/checkout@v2
+        run: git clone --recursive git@github.com:Gistred/AutoChess.git
       - name: Launch premake5
         run: |
           premake5 gmake2
