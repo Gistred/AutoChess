@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
   
     steps:
+      - uses: abel0b/setup-premake@v2.2
+        with:
+          version: "5.0.0-beta2"
       - uses: actions/checkout@v3
         with:
           submodules: true
@@ -17,4 +20,5 @@ jobs:
           make
       - name: Launch tests
         run: premake5 tests
+
       
