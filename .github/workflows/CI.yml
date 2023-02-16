@@ -21,6 +21,6 @@ jobs:
           premake5 gmake2
           make
       - name: Launch tests
-        run: premake5 tests
+        run: ./ChessEngine/bin/Debug/ChessEngine/ChessEngineTest
 
       
