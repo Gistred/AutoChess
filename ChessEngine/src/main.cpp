@@ -1,6 +1,13 @@
+#include "Game.h"
 #include <iostream>
 
-int func()
-{
-    std::cout << "Hello world!" << std::endl;
+int main(void){
+
+    Game* game = new Game();
+    game->init();
+
+    game->board().BoarDisplay();
+
+    std::cout << "testzzrkljrklkaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    
 }

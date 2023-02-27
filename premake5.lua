@@ -26,8 +26,8 @@ newaction {
    trigger     = "clean",
    description = "clean",
    execute     = function ()
-      os.rmdir("./bin")
-      os.rmdir("./bin-int")
+      os.rmdir("./ChessEngine/bin")
+      os.rmdir("./ChessEngine/bin-int")
       os.execute("find -name \"Makefile\" -delete -o -name \"*.make\" -delete")
    end
 }
