@@ -1,9 +1,14 @@
 #pragma once
-#include "Piece.h"
-#include "Details.h"
 
-class Pawn : public Piece {
+#include "../Piece.h"
 
-    Pawn(Color color_) : Piece(PieceType::Pawn, {0, 0}, color_) {};
-    std::vector<Position> get_possible_moves();
+class Pawn : public Piece
+{
+public:
+    Pawn(Position position , Color color_)
+        : Piece(PieceType::Pawn, position, color_)
+    {}
+
+public:
+    std::vector<Position> get_possible_moves(Board& board) override;
 };

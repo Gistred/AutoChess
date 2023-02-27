@@ -2,7 +2,7 @@ targetdirectory = "bin/%{cfg.buildcfg}/ChessEngine"
 objectdirectory = "bin-int/%{cfg.buildcfg}/ChessEngine"
 
 project "ChessEngine"
-   kind "StaticLib"
+   kind "ConsoleApp"
    language "C++"
    cppdialect "C++20"
    print("target2" .. targetdirectory)

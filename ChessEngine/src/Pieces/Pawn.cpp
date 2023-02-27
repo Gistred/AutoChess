@@ -1,21 +1,34 @@
 #include "Pawn.h"
-#include <vector>
 
-std::vector<Position> Pawn::get_possible_moves(const Board& board)
+#include "../Game.h"
+
+std::vector<Position> Pawn::get_possible_moves(Board& board)
 {
-    std::vector<Position> res;
-    unsigned int coeff = color_ == Color::White ? 1 : -1;
+    std::vector<Position> possible_moves;
 
-    /*if never move*/
-    if(!has_moved_)
+    
+    unsigned int coeff = color_ == Color::White ? 1 : -1;
+    
+    Position foward = { position_.x, position_.y + 1 * coeff };
+    if (foward.is_valid() && board.GetPieceAt(foward) == nullptr)
     {
-        Position start_foward = {position_.x, position_.y + 2 * coeff};
+        possible_moves.push_back(foward);
+
+        if(has_moved_ == false)
+        {
+            Position start_foward_two = { position_.x, position_.y + 2 * coeff };
+            if (start_foward_two.is_valid() && board.GetPieceAt(start_foward_two) == nullptr)
+                possible_moves.push_back(start_foward_two);
+        }
     }
 
-    Position foward = {position_.x, position_.y + 1 * coeff};
-    if (noir devant)
-        the voice
+    Position take_right = { position_.x + 1, position_.y + 1 * coeff };
+    Piece* right = board.GetPieceAt(take_right);
+    if (take_right.is_valid() && right != nullptr && right->get_color() != color_)
+        possible_moves.push_back(take_right);
 
-    Position take_one = {position_.x + 1, position_.y + 1 * coeff};
-    position take_two = {position_.x - 1, position_.y + 1 * coeff};
+    Position take_left = { position_.x - 1, position_.y + 1 * coeff };
+    Piece* left = board.GetPieceAt(take_left);
+    if (take_left.is_valid() && left != nullptr && left->get_color() != color_)
+        possible_moves.push_back(take_left);
 }

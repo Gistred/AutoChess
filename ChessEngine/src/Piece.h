@@ -1,7 +1,10 @@
 #pragma once
 
 #include "Details.h"
+
 #include <vector>
+
+class Board;
 
 class Piece
 {    
@@ -12,14 +15,16 @@ public:
           color_(color)
     {}
 
-    virtual std::vector<Position> get_possible_moves();
+public:
+    virtual std::vector<Position> get_possible_moves(Board& board);
 
-    //Getters
+public:
     const Position& position() const { return position_; };
     Position& position() { return position_; };
-    bool get_has_moved() const { return has_moved_; };
-    PieceType get_piece_type() const{ return piece_type_; }
-    Color get_color() const{ return color_; }
+    bool has_moved() const { return has_moved_; };
+    bool& has_moved() { return has_moved_; };
+    PieceType piece_type() const { return piece_type_; }
+    Color get_color() const { return color_; }
 
 protected:
     PieceType piece_type_;
@@ -27,4 +32,3 @@ protected:
     bool has_moved_ = false;
     Color color_;
 };
-
